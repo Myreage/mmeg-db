@@ -2,7 +2,7 @@ import discord
 from discord.ext import commands
 import asyncio
 from func import showCreature
-
+from priv import TOKEN
 bot = commands.Bot(command_prefix='?')
 
 
@@ -29,7 +29,7 @@ async def creature(context, *args):
        
     await bot.send_message(context.message.channel, embed=embed)
 
-bot.run('NDY2MjUzOTQ4NTM0MzkwNzg3.DiZZ0w.0na3_HQvPL6SUBDOJek1EQdi2B8')
+bot.run(TOKEN)
 
 
 
