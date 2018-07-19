@@ -19,7 +19,7 @@ async def creature(context, *args):
 
     res = showCreature(' '.join(args))
     if (res == False):
-        await bot.send_message(context.message.channel, 'Je ne trouve pas' + ' '.join(args))
+        await bot.send_message(context.message.channel, 'Je ne trouve pas ' + ' '.join(args))
     else:
         embed = discord.Embed(title=res['title'], color=0x00ff00)
         embed.add_field(name="__**Informations**__", value=res['head'], inline=True)
