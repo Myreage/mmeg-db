@@ -7,8 +7,6 @@ def elementFR(element):
         return 'Feu'
     elif element == 'earth':
         return 'Terre'
-    elif element == 'fire':
-        return 'Feu'
     elif element == 'air':
         return 'Air'
 
