@@ -21,6 +21,17 @@ def upgradesList(spell):
             res = i['name']
     return res
 
+def ingredient(data):
+    res = ''
+    if data['title'] is not None:
+        res = res + data['title'] + ' : '
+    res = res + data['text']
+    return res
+
+
+def ingredients(ingredients):
+    return '\n\n' + ' | '.join(map(ingredient, ingredients))
+
 def showCreature(name):
     r = requests.get('https://mmeg-db.com/fr/api/creatures/show?search=' + name)
     dictjson = r.json()['data'][0]
@@ -48,12 +59,15 @@ def showCreature(name):
 
     res['spells']= '\n**1. ' + dictjson['spells'][0]['title'] + '**\n' \
     + dictjson['spells'][0]['text'] \
+    + ingredients(dictjson['spells'][0]['ingredients']) \
     + '\n\n*Upgrades* : ' + upgradesList(dictjson['spells'][0]) \
     + '\n\n**2. ' + dictjson['spells'][1]['title'] + '**\n' \
     + dictjson['spells'][1]['text'] \
+    + ingredients(dictjson['spells'][1]['ingredients']) \
     + '\n\n*Upgrades* : ' + upgradesList(dictjson['spells'][1]) \
     + '\n\n**3. ' + dictjson['spells'][2]['title'] + '**\n' \
     + dictjson['spells'][2]['text'] \
+    + ingredients(dictjson['spells'][2]['ingredients']) \
     + '\n\n*Upgrades* : ' + upgradesList(dictjson['spells'][2]) \
 
     return res
