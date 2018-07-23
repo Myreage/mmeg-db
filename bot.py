@@ -18,7 +18,7 @@ async def on_ready():
 async def creature(context, *args):
 
     res = showCreature(' '.join(args))
-    print(res)
+
     if (res == False):
         await bot.send_message(context.message.channel, 'Je ne trouve pas ' + ' '.join(args))
     else:
