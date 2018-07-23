@@ -56,18 +56,20 @@ def showCreature(name):
     + '\n**Vitesse** : ' + str(dictjson['speed']) \
     + '\n**Resistance** : ' + str(dictjson['resistance'])
 
-    res['spells']= '\n**1. ' + dictjson['spells'][0]['title'] + '**\n' \
+    res['spell1'] = '\n\n**' +dictjson['spells'][0]['title'] + '**\n' \
     + dictjson['spells'][0]['text'] \
     + ingredients(dictjson['spells'][0]['ingredients']) \
-    + '\n\n*Upgrades* : ' + upgradesList(dictjson['spells'][0]) \
-    + '\n\n**2. ' + dictjson['spells'][1]['title'] + '**\n' \
+    + '\n\n*Upgrades* : ' + upgradesList(dictjson['spells'][0])
+
+    res['spell2'] = '\n\n**' + dictjson['spells'][1]['title'] + '**\n' \
     + dictjson['spells'][1]['text'] \
     + ingredients(dictjson['spells'][1]['ingredients']) \
-    + '\n\n*Upgrades* : ' + upgradesList(dictjson['spells'][1]) \
-    + '\n\n**3. ' + dictjson['spells'][2]['title'] + '**\n' \
+    + '\n\n*Upgrades* : ' + upgradesList(dictjson['spells'][1]) 
+    
+    res['spell3'] =  '\n\n**' + dictjson['spells'][2]['title'] + '**\n' \
     + dictjson['spells'][2]['text'] \
     + ingredients(dictjson['spells'][2]['ingredients']) \
-    + '\n\n*Upgrades* : ' + upgradesList(dictjson['spells'][2]) \
+    + '\n\n*Upgrades* : ' + upgradesList(dictjson['spells'][2]) 
 
     return res
 
