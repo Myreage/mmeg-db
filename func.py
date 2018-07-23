@@ -7,8 +7,6 @@ def elementFR(element):
         return 'Feu'
     elif element == 'earth':
         return 'Terre'
-    elif element == 'fire':
-        return 'Feu'
     elif element == 'air':
         return 'Air'
 
@@ -35,7 +33,8 @@ def ingredients(ingredients):
 def showCreature(name):
     r = requests.get('https://mmeg-db.com/fr/api/creatures/show?search=' + name)
     dictjson = r.json()['data'][0]
-    
+    if 'not_found' in r.json():
+        return False
 
     res = dict()
 
